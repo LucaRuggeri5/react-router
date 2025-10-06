@@ -2,7 +2,7 @@ const MyContacts = () => {
 
     return (
         <>
-            <h1>Siamo una squadra fortissimi
+            <h1 className="chi-siamo">Siamo una squadra fortissimi
                 Fatta di gente fantastici
                 E nun potimm' perd'
                 E fa figur' e mmerd'
