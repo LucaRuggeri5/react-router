@@ -11,15 +11,15 @@ const links = [
 const MyNavBar = () => {
 
     return (
-            <nav>
-                <ul>
-                    {links.map(link => (
-                        <li>
-                            <NavLink to={link.path}>{link.label}</NavLink>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
+        <nav>
+            <ul>
+                {links.map(link => (
+                    <li key={link.path}>
+                        <NavLink to={link.path}>{link.label}</NavLink>
+                    </li>
+                ))}
+            </ul>
+        </nav>
     )
 }
 

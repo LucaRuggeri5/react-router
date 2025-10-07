@@ -10,6 +10,7 @@ import DefaultLayout from './layouts/DefautLayout';
 import MyHomePage from './pages/MyHomePage';
 import MyContacts from './pages/MyContacts';
 import MyProducts from './pages/MyProducts';
+import MyDetailProducts from './pages/MyDetailProducts';
 
 function App() {
 
@@ -21,7 +22,10 @@ function App() {
           <Route element={<DefaultLayout />}>
             <Route path='/' element={<MyHomePage />} />
             <Route path='/contact' element={<MyContacts />} />
-            <Route path='/products' element={<MyProducts />} />
+            <Route path='/products'>
+              <Route path='' element={<MyProducts />} />
+              <Route path=':id' element={<MyDetailProducts />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
