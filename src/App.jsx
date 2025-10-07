@@ -11,6 +11,7 @@ import MyHomePage from './pages/MyHomePage';
 import MyContacts from './pages/MyContacts';
 import MyProducts from './pages/MyProducts';
 import MyDetailProducts from './pages/MyDetailProducts';
+import NotFound from './pages/NotFound';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
               <Route path='' element={<MyProducts />} />
               <Route path=':id' element={<MyDetailProducts />} />
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

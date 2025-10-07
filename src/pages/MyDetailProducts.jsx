@@ -17,23 +17,27 @@ const MyDetailProducts = () => {
     useEffect(() => {
         axios.get(`https://fakestoreapi.com/products/${id}`)
             .then(res => setProducts(res.data))
-        // .catch(() => { navigate('/prodotti') })
+            .catch(() => { navigate('/prodotti') })
     }, [id])
 
     return (
-        <div>
+        <div className="prodotti">
             {prodotto ? (
-                <div className="prodotto">
+                <div className="prodotto-detail">
+                        <Link className="link-prodotto" to={`/products`}>
                     <div className="img-prodotto">
                         <img src={prodotto.image} alt="foto prodotto" />
                     </div>
                     <div className="info-prodotto">
+                        <p className="categoria-prodotto">{prodotto.category}</p>
                         <p className="nome-prodotto">{prodotto.title}</p>
+                        <p className="descrizione-prodotto">{prodotto.description}</p>
                         <p className="prezzo-prodotto">{prodotto.price}€</p>
-                        <Link to={`/products`}>
-                            Torna ai Prodotti
-                        </Link>
+                        <p className="valutazione-prodotto">I nostri clienti lo hanno valutato con: {prodotto.rating.rate}/5</p>
+                        {/* il link lo prendo direttamente dall'api */}
+                            {/* Torna ai Prodotti */}
                     </div>
+                        </Link>
                 </div>
             )
                 :

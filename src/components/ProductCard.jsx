@@ -6,16 +6,18 @@ export default function ProductCard(props) {
 
     return (
         <div className="prodotto">
+                <Link className="link-prodotto" to={`/products/${prodotto.id}`}>
             <div className="img-prodotto">
                 <img src={prodotto.image} alt="foto prodotto" />
             </div>
             <div className="info-prodotto">
+                <p className="categoria-prodotto">{prodotto.category}</p>
                 <p className="nome-prodotto">{prodotto.title}</p>
                 <p className="prezzo-prodotto">{prodotto.price}€</p>
-                <Link to={`/products/${prodotto.id}`}>
-                    Dettaglio Prodotti
-                </Link>
+                {/* il link lo prendo direttamente dall'api */}
+                    {/* Dettaglio Prodotti */}
             </div>
+                </Link>
         </div>
     )
 }
